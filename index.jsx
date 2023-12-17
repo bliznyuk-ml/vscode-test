@@ -27,32 +27,40 @@
 //         </div>  // элемент, который мы хотим создать
 // );
 
-const elem = ReactDOM.createRoot(document.getElementById("header"));
-function tick() {
-  elem
-    .render(
-      <div>
-        <h1>Сервис получения времени</h1>
-        <h2>Текущее время {new Date().toLocaleTimeString()}.</h2>
-      </div>
-            );
-          }
-setInterval(tick, 1000);
+// const elem = ReactDOM.createRoot(document.getElementById("header"));
+// function tick() {
+//   elem
+//     .render(
+//       <div>
+//         <h1>Сервис получения времени</h1>
+//         <h2>Текущее время {new Date().toLocaleTimeString()}.</h2>
+//       </div>
+//             );
+//           }
+// setInterval(tick, 1000);
   
-ReactDOM.createRoot(document.getElementById("container"))
-    .render(
-      <div>
-      <h2>Начальное время {new Date().toLocaleTimeString()}.</h2>
-      </div>
-);
+// ReactDOM.createRoot(document.getElementById("container"))
+//     .render(
+//       <div>
+//       <h2>Начальное время {new Date().toLocaleTimeString()}.</h2>
+//       </div>
+// );
 
-// var Hello =() => {
-//   return (<h1>Привет, Медвед</h1>);
-// }
+var Hello =(props) => {
+  return (
+    <div>
+  <h1>Привет, Медвед</h1>
+  <p>Name: {props.name}</p>
+  <p>Age: {props.age}</p>
+  </div>
+  );
+}
 
-// ReactDOM.createRoot(
-//       document.getElementById("app")
-//   )
-//   .render(
-//       <Hello />
-//   );
+Hello.defaultProps = {name: "Scott", age: "25"};
+
+ReactDOM.createRoot(
+      document.getElementById("app")
+  )
+  .render(
+      <Hello age = "65"/>
+  );
