@@ -1,7 +1,7 @@
-// const rootNode = document.getElementById("app");    // элемент для рендеринга приложения React
-// // получаем корневой элемент 
-// const root = ReactDOM.createRoot(rootNode);
-// // рендеринг в корневой элемент
+const rootNode = document.getElementById("app");    // элемент для рендеринга приложения React
+// получаем корневой элемент 
+const root = ReactDOM.createRoot(rootNode);
+// рендеринг в корневой элемент
 
 // const user = {
 //     id : 5,
@@ -59,8 +59,21 @@ var Hello =(props) => {
 Hello.defaultProps = {name: "Scott", age: "25"};
 
 ReactDOM.createRoot(
-      document.getElementById("app")
+      document.getElementById("header")
   )
   .render(
       <Hello age = "65"/>
   );
+
+  function ClickButton(props) {
+             
+    function press(e){
+      console.log(e.type);
+       alert("Hello React!")
+    }
+    return <button onClick={press}>Click</button>;
+}
+
+root.render(
+  <ClickButton />
+);
